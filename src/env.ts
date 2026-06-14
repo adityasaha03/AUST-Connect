@@ -12,8 +12,8 @@ export const env = createEnv({
     DATABASE_URL: z.string().url("DATABASE_URL must be a valid URL"),
 
     // JWT
-    JWT_PRIVATE_KEY: z.string().min(1, "JWT_PRIVATE_KEY is required"),
-    JWT_PUBLIC_KEY: z.string().min(1, "JWT_PUBLIC_KEY is required"),
+    JWT_PRIVATE_KEY: z.string().min(1).transform(key => key.replace(/\\n/g, "\n")),
+    JWT_PUBLIC_KEY: z.string().min(1).transform(key => key.replace(/\\n/g, "\n")),
     JWT_ACCESS_TOKEN_EXPIRY: z.string().default("15m"),
     JWT_REFRESH_TOKEN_EXPIRY: z.string().default("30d"),
 

@@ -23,7 +23,6 @@
     "noPropertyAccessFromIndexSignature": false,
 
     "outDir": "./dist",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
